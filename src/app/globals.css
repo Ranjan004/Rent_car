@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-sans; /* Since we configured Roboto as the sans font in Tailwind config */
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Typography styles for h1-h6 and p tags */
+  h1 {
+    @apply text-4xl font-bold leading-tight;
+  }
+
+  h2 {
+    @apply text-4xl font-bold tracking-tight lg:text-5xl text-[#232323];
+  }
+
+  h3 {
+    @apply text-2xl font-semibold leading-snug text-[#232323];
+  }
+
+  h4 {
+    @apply text-xl font-medium leading-snug;
+  }
+
+  h5 {
+    @apply text-lg font-medium leading-normal;
+  }
+
+  h6 {
+    @apply text-base font-medium leading-normal;
+  }
+
+  p {
+    @apply text-base font-normal leading-relaxed;
+  }
+  .dark {
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+.scroll-feed {
+  /* Copy all the CSS from the original style tag */
+  /* Replace $variables with actual colors */
+}
+
+/* Additional required styles for modal and carousel functionality */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+}
+
+.container-modal {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Add responsive styles as needed */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* For Firefox */
+}
+
+.rdp-chevron {
+  fill: #fb7185 !important;
+}
+.rdp-today:not(.rdp-outside) {
+  color: #fb7185 !important;
+}
+.rdp-selected .rdp-day_button {
+  border: #000 !important;
+  color: #fb7185 !important;
+  background: #ffe4e6 !important;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional: For Safari support */
+@supports (-webkit-touch-callout: none) {
+  html {
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Optional: Disable smooth scroll for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+.dummy-positioning {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Variables */
+:root {
+  --green: #4cc93f;
+  --icon-base-size: 10px; /* Reduced by 50% */
+}
+
+/* Structure */
+.success-icon {
+  display: inline-block;
+  width: 4em; /* Reduced by 50% */
+  height: 4em; /* Reduced by 50% */
+  font-size: var(--icon-base-size);
+  border-radius: 50%;
+  border: 2px solid #66d559; /* Border thickness reduced */
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  transform-origin: center;
+  animation: showSuccess 180ms ease-in-out;
+  transform: scale(1);
+}
+
+/* Elements */
+.success-icon__tip,
+.success-icon__long {
+  display: block;
+  position: absolute;
+  height: 2px; /* Reduced by 50% */
+  background-color: #66d559;
+  border-radius: 10px;
+}
+
+.success-icon__tip {
+  width: 1.2em; /* Reduced by 50% */
+  top: 2.15em; /* Reduced by 50% */
+  left: 0.7em; /* Reduced by 50% */
+  transform: rotate(45deg);
+  animation: tipInPlace 300ms ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 220ms;
+  visibility: hidden;
+}
+
+.success-icon__long {
+  width: 2em; /* Reduced by 50% */
+  transform: rotate(-45deg);
+  top: 1.85em; /* Reduced by 50% */
+  left: 1.375em; /* Reduced by 50% */
+  animation: longInPlace 140ms ease-in-out;
+  animation-fill-mode: forwards;
+  visibility: hidden;
+  animation-delay: calc(300ms + 140ms);
+}
+
+/* Keyframes */
+@keyframes showSuccess {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes tipInPlace {
+  from {
+    width: 0em;
+    top: 0em;
+    left: -0.8em; /* Reduced by 50% */
+  }
+  to {
+    width: 1.2em; /* Reduced by 50% */
+    top: 2.15em; /* Reduced by 50% */
+    left: 0.7em; /* Reduced by 50% */
+    visibility: visible;
+  }
+}
+
+@keyframes longInPlace {
+  from {
+    width: 0em;
+    top: 2.55em; /* Reduced by 50% */
+    left: 1.6em; /* Reduced by 50% */
+  }
+  to {
+    width: 2em; /* Reduced by 50% */
+    top: 1.85em; /* Reduced by 50% */
+    left: 1.375em; /* Reduced by 50% */
+    visibility: visible;
+  }
+}
